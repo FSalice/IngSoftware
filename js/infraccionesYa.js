@@ -1,39 +1,3 @@
-
-/*
-Ver estos links
-https://www.kirupa.com/html5/making_http_requests_js.htm
-https://spring.io/guides/gs/consuming-rest-jquery/
-
-
-
-/*
-var xmlhttp = new XMLHttpRequest();
-var url = "https://infraccionesya.herokuapp.com/api/ABC123/infracciones/";
-
-xmlhttp.onreadystatechange = function() {
-if (this.readyState == 4 && this.status == 200) {
-    var myArr = JSON.parse(this.responseText);
-    myFunction(myArr);
-    }
-};
-
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
-
-*/
-
-/*
-var infracciones =
-
-document.getElementById("content").innerHTML =
-infracciones.fechaHoraRegistro + "<br>" +
-infracciones.fechaHoraActualizacion + "<br>" +
-infracciones.direccionRegistrada+ "<br>" +
-infracciones.montoAPagar+ "<br>" +
-infracciones.existeAcarreo;
-
-*/
-
 /*
 {"patente":"ABC123","infracciones":[
 {"id":42,"fechaHoraRegistro":"Sat, 20 Aug 2016 02:00:01 GMT","fechaHoraActualizacion":"Sat, 20 Aug 2016 02:00:01 GMT","direccionRegistrada":"","tipoInfraccion":0,"montoAPagar":"$1500","existeAcarreo":true}
@@ -41,3 +5,55 @@ infracciones.existeAcarreo;
 ,{}]
 ,"version":{"id":"0.0.1","name":"meteor","lastupdate":1476717741559}}
 */
+
+			function GetInfracciones(patente) {
+	 		try {
+			    /*jQuery.support.cors = true;*/
+			var service = 'https://infraccionesya.herokuapp.com/api';
+			  source = {
+				datatype: "json",
+			    datafields: [
+			                 { name: 'fechaHoraRegistro' },
+			                 { name: 'fechaHoraActualizacion' },
+			                 { name: 'direccionRegistrada'},
+			                 { name: 'montoAPagar'},
+							 			 	 { name: 'existeAcarreo'}
+						 ]
+			                 };
+		    	$.ajax(
+			    {
+			        cache: false,
+			        type: "GET",
+					async: false,
+			        data: {},
+			        url: service + '/'+patente+'/infracciones/',
+			        contentType: "application/json; charset=utf-8",
+					crossDomain: true,
+			        dataType: "json",
+			        success: dibujarMultas,
+			        error: function (msg) {
+			            alert(msg.responseText);
+			        }
+			    });
+			}
+	        catch (e) {
+              alert('failed to call web service. Error: ' + e);
+          }
+		}
+
+		function dibujarMultas (data, status)
+		{
+				$.each( data.infracciones,
+					function(index, infraccion){
+						var row = '<tr id="row"> ';
+
+						row += '<td>' + infraccion.fechaHoraRegistro + '</td>' +
+						 '<td>'+ infraccion.fechaHoraActualizacion + '</td>'
+						+'<td>'+ infraccion.direccionRegistrada + '</td>'
+						+'<td>'+ infraccion.montoAPagar + '</td>'
+						+'<td>'+ infraccion.existeAcarreo + '</td></tr>';
+
+						$("#location").append(row);
+					}
+				 )
+			}

@@ -5,7 +5,7 @@
 		<title>Estacionamiento Medido por Celulares</title>
 		<!-- Zona de Css-->
 		<link rel="stylesheet" href="css/style.css"/>
-		<link rel="stylesheet" type="text/css" media="screen" href="./css/view.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="./css/mapa.css" />
 		<link rel="stylesheet" href="./js/leaflet/leaflet.css" />
 		<link rel="stylesheet" href="./js/leaflet/MarkerCluster.css" />
 		<link rel="stylesheet" href="./js/leaflet/MarkerCluster.Default.css" />
@@ -14,7 +14,7 @@
 		<script type="text/javascript" src="js/funcionesMenu.js"></script>
     <script type="text/javascript" src="js/infraccionesYa.js"></script>
 		<script src="./js/leaflet/leaflet.js"></script>
-		<script src="./js/view.js"></script>
+		<script src="./js/mapa.js"></script>
 		<script src="./js/leaflet/leaflet.markercluster-src.js"></script>
 	</head>
 	<body>
@@ -22,25 +22,25 @@
 			<div id="header">
 		        <h1>Servicios del Estacionamiento</h1>
 			</div>
+				    <div id="content">
+								<style>
+								.invisible {display:none}
+								</style>
+								<div class="invisible">
+								<div id="mapid" ></div>
+							</div>
+				     	</div>
 			<!--menu-->
 			<div id="menu">
 				<ul>
-					<li id="menuServicio1">Servicio1</li>
-					<li id="menuServicio2">Servicio2</li>
+					<li id="menuServicio1">Puntos de Venta</li>
+					<li id="menuServicio2">Lugares Disponibles</li>
 					<li id="menuServicio3">Infracciones Ya</li>
-					<li id="menuServicio4">Puntos de Venta</li>
+					<li id="menuServicio4">Sarasa</li>
 				</ul>
 			</div>
 			<!--menu-->
 
-	     	<div id="content">
-					<style>
-					.invisible {display:none}
-					</style>
-					<div class="invisible">
-					<div id="mapid" ></div>
-				</div>
-	     	</div>
 	     	<div id="footer">Todos los derechos reservados. Politicas de privacidad</div>
 			</div>
 	</body>

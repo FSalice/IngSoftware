@@ -2,7 +2,6 @@
 	font-family: Arial;
 
 }
-
 body{
 	background-color:#24607f;
 	padding: 0;
@@ -10,13 +9,12 @@ body{
 }
 
 #container{
-	margin: 0 auto;
-	width: 850px;
+	margin-left: 20px;
+	width: 300px;
 }
 #header{
-
 	background: url(../img/fotocabez.png);
-	height: 300px;
+	height: 100px;
 	margin-top: 10px;
 	width: 100%;
 	-vebkit-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
@@ -27,8 +25,8 @@ body{
 }
 
 #menu{
-	background-color: #fff;
-	text-align: center;
+	background-color: #55a;
+	text-align: left;
 }
 #menu ul{
 	margin:0;
@@ -37,14 +35,14 @@ body{
 
 #menu ul li{
 	list-style: none;
-	display: inline-block;
-	padding: 40px 10px;
+	display: list-item;
+	padding: 20px 10px;
 	margin-left: -25px
 
 	color: #000;
 	font-size: 14px;
 	font-weight: bold;
-	padding: 40px 10px;
+	padding: 20px 10px;
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -53,21 +51,27 @@ body{
 	color: #000;
 	font-size: 14px;
 	font-weight: bold;
-	padding: 40px 10px;
+	padding: 20px 10px;
 	text-decoration: none;
 }
 
-#menu ul li:hover{
-	background-color: #ff5105;
+#menu ul li:hover
+{
+	background-color: #000;
 	color:#fff;
+
+  position: absolute
+	top: 50px;
+  width: 280px;
+	height: auto;
 }
 
-#menu ul li a:hover{
-	background-color: #ff5105;
-	color:#fff;
-}
+#content
+{
+	position: absolute;
+	margin-top: -100px;
+	margin-left: 310px;
 
-#content{
 	background-color: #fff;
 	-vebkit-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 	-moz-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
@@ -75,12 +79,22 @@ body{
  	box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 }
 
-#footer{
-color: #fff;
-font-size: 12px;
-font-weight: bolder;
-padding-top: 30px;
-padding-bottom: 30px;
-text-align: center;
+#footer
+{
+	color: #fff;
+	font-size: 12px;
+	font-weight: bolder;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+}
 
+#location
+{
+	position: absolute;
+
+	margin-top: 100px;
+	margin-left: -305px;
+
+	background-color: #fff;
 }

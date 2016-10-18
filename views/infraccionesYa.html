@@ -1,26 +1,27 @@
-<!--
-manual
-https://infraccionesya.herokuapp.com/api
+<script src="./js/infraccionesYa.js"></script>
 
-{"welcome":"Bienvenidos a Infracciones Ya!",
-"urls":{"GET":{"/api/:patente/infracciones/":{"descripci�n":"Lista las infracciones pertenecientes a la patente :patente","ejemplo":"/api/ABC123/infracciones/"}
-,"/api/:patente/infracciones/:infraccion_id":{"descripci�n":"Obtiene la infracci�n con id :infraccion_id","ejemplo":"/api/ABC123/infraciones/42"}
-,"/api/tiposInfraccion/":{"descripci�n":"Lista los tipos de infracciones.","ejemplo":"/api/tiposInfraccion/"}
-,"/api/tiposInfraccion/:type_id":{"descripci�n":"Obtiene el tipo de infracci�n con id :type_id","ejemplo":"/api/tiposInfraccion/1"}
-,"/api/acarreo/:infraccion":{"descripci�n":"Obtiene la informaci�n de acarreo para la infracci�n con id :infraccion","ejemplo":"/api/acarreo/42"}}}}
-
--->
-<!DOCTYPE>
-<html lang="es">
-	<head>
-		<meta http-equiv="content-type" content="text/html" charset="utf-8">
-		<title>Estacionamiento Medido por Celulares - Servicio 1</title>
-		<link rel="stylesheet" href="css/style.css"/>
-		<script type="text/javascript" src="js/funcionesMenu.js"></script>
-	</head>
-	<body>
-    <h2>Infracciones YA </h2>
 		<div id="content">
-	     </div>
+
+
+
+			<table id="location" border='1'>
+			    <tr>
+			     		<th>Fecha</th>
+					 		<th>fechaHoraActualizacion</th>
+			     		<th>Dirección</th>
+					 		<th>Monto a Pagar</th>
+					 		<th>Acarreo</th>
+			    </tr>
+			</table>
+
+			<script>
+			$(document).ready(function(){
+					GetInfracciones($('#patente').val());
+			});
+			</script>
+
+		</div>
+<!--
 	</body>
 </html>
+-->
