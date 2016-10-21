@@ -59,6 +59,34 @@ function puntosVenta()
   }
 }
 
+function misAutos(usuario)
+{
+  for(var i = 0; i < repoUsuarios.length; i++)
+  {
+    if(usuario==repoUsuarios[i].username)
+    {
+      for(var j = 0; j < repoUsuarios[i].patentes.length; j++)
+      {
+        for(var k = 0; k < repoLugares.length; k++)
+        {
+          if(repoUsuarios[i].patentes[j]==repoLugares[k].patente)
+          {
+            var l = new Lugar(
+              repoLugares[k].latlng[0],
+              repoLugares[k].latlng[1],
+              repoLugares[k].localidad,
+              repoLugares[k].calle,
+              repoLugares[k].altura,
+              repoLugares[k].disponible,
+              repoLugares[k].patente);
+            agregarMiAuto(l);
+          }
+        }
+      }
+    }
+  }
+}
+
 function trylog(user, pass)
 {
   usuario = "error";

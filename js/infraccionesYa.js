@@ -103,14 +103,16 @@ function drawDeposito (deposito)
 				 + deposito.horarios);
 }
 
-
+/*
+Muestra en una grilla las infracciones cometidas
+*/
 function dibujarMultas (data, status)
 		{
-			 clearTable()
-			 drawHeader();
+			 clearTable();
+			 var row = drawHeader();
 				$.each( data.infracciones,
 					function(index, infraccion){
-						var row = '<tr id="row"> ';
+						row += '<tr id="row">';
 						row +=
 						'<td>' + infraccion.id + '</td>'
 						+'<td>' + getTipoInfraccion(infraccion.tipoInfraccion) + '</td>'
@@ -128,21 +130,27 @@ function dibujarMultas (data, status)
 							}
 						 row += '</td>'+'</tr>';
 
-						$("#location").append(row);
 					}
 				 )
+				 row += '</tbody> </table>';
+				 $("#location").append(row)
 			}
+
 			function drawHeader ()
 			{
-				var header = '<tr>'
+				var header = '<table class="table table-over"> '
+						+'<thead><tr>'
 						+' <th>Id</th>'
-						+' <th>Fecha</th>'
-						+' <th>fechaHoraActualizacion</th>'
+					  +' <th>Infracción</th>'
+						+' <th>Fecha de Registración</th>'
+						+' <th>Fecha Actualización</th>'
 						+' <th>Dirección</th>'
 						+' <th>Monto a Pagar</th>'
 						+' <th>Acarreo</th>'
 						+'</tr>'
-					$("#location").append(header);
+						+'</thead>'
+						+'<tbody>'
+					return header;
 			}
 
 /*

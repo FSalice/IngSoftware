@@ -2,6 +2,7 @@ var map;
 var clusterVentas;
 var clusterLugares;
 var clusterLugaresOcupados;
+var clusterMisAutos;
 var poligonosZonas;
 var iniciado;
 
@@ -21,6 +22,8 @@ function iniciarMapa()
     clusterLugares.addTo(map);
     clusterLugaresOcupados = L.markerClusterGroup();
     clusterLugaresOcupados.addTo(map);
+    clusterMisAutos = L.markerClusterGroup();
+    clusterMisAutos.addTo(map);
 
     poligonosZonas = [L.polygon([])];
 
@@ -75,45 +78,12 @@ function quitarPoligonos()
   poligonosZonas = [L.polygon([])];
 }
 
-function bootstrap()
+function agregarMiAuto(punto)
 {
-  iniciarMapa();
+  punto.getMarker().addTo(clusterMisAutos);
+}
 
-  var ungsLocation = [-34.5221554, -58.7000067];
-
-
-
-  var ungsIcon = L.icon({
-      iconUrl: '../js/resources/33622.png',
-      shadowUrl: '../js/resources/33622sombra.png',
-
-      iconSize:     [40, 40], // size of the icon
-      shadowSize:   [40, 40], // size of the shadow
-      iconAnchor:   [20, 40], // point of the icon which will correspond to marker's location
-      shadowAnchor: [0, 40],  // the same for the shadow
-      popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
-  });
-
-  var ungsMarker = L.marker(ungsLocation, {icon: ungsIcon});
-  ungsMarker.bindPopup("<b>Hola!</b><br>Lulu, Ale y Vane son altos gatitos").openPopup();
-
-  ungsMarker.addTo(map);
-
-
-  map.on('click', onMapClick);
-
-
-  var cluster = L.markerClusterGroup();
-
-  cluster.addLayers([
-    ungsMarker,
-    L.marker([-34.533755, -58.692713]),
-    L.marker([-34.516181, -58.716625])
-  ]);
-
-  cluster.addTo(map);
-
-
-    var popup = L.popup();
-
+function quitarMisAutos()
+{
+  clusterMisAutos.clearLayers();
 }

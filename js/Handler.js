@@ -2,6 +2,7 @@ var puntosVentaOn = false;
 var zonasOn = false;
 var ocupadosOn = false;
 var disponiblesOn = false;
+var miAutoOn = false;
 var usuario;
 
 OCULTO="none";
@@ -78,6 +79,18 @@ function clicked(item)
         ocupadosOn=false;
         quitarLugaresOcupados();
         document.getElementById("menuServicio6").innerHTML = "Ver Lugares Ocupados";
+      }
+      break;
+    case 7:
+      if(!miAutoOn)
+      {
+        miAutoOn=true;
+        misAutos(usuario[0]);
+        document.getElementById("menuServicio7").innerHTML = "Ocultar Mis Vehiculos";
+      }else{
+        miAutoOn=false;
+        quitarMisAutos();
+        document.getElementById("menuServicio7").innerHTML = "Ver Mis Vehiculos";
       }
       break;
   }
