@@ -11,37 +11,72 @@
 		<link rel="stylesheet" href="./js/leaflet/MarkerCluster.Default.css" />
 		<!-- Zona de Scripts-->
 		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-		<script type="text/javascript" src="js/funcionesMenu.js"></script>
     <script type="text/javascript" src="js/infraccionesYa.js"></script>
 		<script src="./js/leaflet/leaflet.js"></script>
 		<script src="./js/mapa.js"></script>
 		<script src="./js/leaflet/leaflet.markercluster-src.js"></script>
+		<script src="./js/Handler.js"></script>
+		<script src="./js/jsons.js"></script>
+		<script src="./clases/PuntoDeVenta.js"></script>
+		<script src="./clases/Zona.js"></script>
+		<script src="./clases/Lugar.js"></script>
+		<script src="./clases/Ubicacion.js"></script>
+
+
 	</head>
 	<body>
 		<div id="container">
-			<div id="header">
-		        <h1>Servicios del Estacionamiento</h1>
+
+      <div id="header">
+
+				<h1 id="titulo">Servicios del Estacionamiento</h1>
+
+				<div id="login" class="login-form">
+					 <input type="text" class="form-control" placeholder="Usuario " id="UserName">
+					 	<i class="fa fa-user"></i>
+					 <input type="password" class="form-control" placeholder="Contraseña" id="Password">
+					 	<i class="fa fa-lock"></i>
+				 <button type="button" class="log-btn" onclick="clicked(0);" >Ingresar</button>
+				 	<h3 id="error" style="display:none;">Usuario inexistente o contraseña incorrecta</h3>
+				</div>
+
+				<div id="sesion" style="display:none;">Bienvenido/a</div>
 			</div>
-				    <div id="content">
-								<style>
-								.invisible {display:none}
-								</style>
-								<div class="invisible">
-								<div id="mapid" ></div>
-							</div>
-				     	</div>
-			<!--menu-->
-			<div id="menu">
-				<ul>
-					<li id="menuServicio1">Puntos de Venta</li>
-					<li id="menuServicio2">Lugares Disponibles</li>
-					<li id="menuServicio3">Infracciones Ya</li>
-					<li id="menuServicio4">Sarasa</li>
-				</ul>
-			</div>
+
 			<!--menu-->
 
-	     	<div id="footer">Todos los derechos reservados. Politicas de privacidad</div>
+<div id="menu">
+	<ul>
+		<li id="menuServicio1" onclick="clicked(1)" >Mapa</li>
+		<li id="menuServicio2" onclick="clicked(2)" >Infracciones Ya</li>
+	</ul>
+</div>
+
+<div id="menuMapa" style="display:none;">
+	<ul>
+		<li id="menuServicio3" onclick="clicked(3)" >Ver Puntos de Venta</li>
+		<li id="menuServicio4" onclick="clicked(4)" >Ver Zonas</li>
+		<li id="menuServicio5" onclick="clicked(5)" >Ver Lugares Disponibles</li>
+		<li id="menuServicio6" onclick="clicked(6)" style="display:none;">Ver Lugares Ocupados</li>
+		<li id="menuServicio7" onclick="clicked(7)" style="display:none;">Ver Mis Vehiculos</li>
+	</ul>
+</div>
+
+
+		<div id="mapid" style="display:none;"></div>
+
+		 <div id="infraccionesYa" style="display:none;">
+		  <div id="ContenedorPatente">
+		 	 <label id="titlePatente">Patente:</label>
+		 		 <input id='patente'/>
+		 		 <button type="button" onclick="GetInfracciones($('#patente').val())">Infracciones Ya</button>
+		  </div>
+		  <div id="contentInfraccionesYa">
+		 		 <table id="location" border='1'>
+		 		 </table>
+		 	 </div>
+		 </div>
+
 			</div>
 	</body>
 </html>

@@ -1,15 +1,4 @@
 
-#mapid {
-  background: #CCCCCC;
-
-  position: absolute;
-
-  top: 0px;
-  bottom: -500px;
-
-  width: 850px;
-  height: auto;
-}
 #menuMap
 {
   background: #AAAAAA;

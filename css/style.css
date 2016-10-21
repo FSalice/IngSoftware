@@ -3,30 +3,144 @@
 
 }
 body{
-	background-color:#24607f;
+	background-color:#7596A8;
 	padding: 0;
 	margin: 0;
 }
 
 #container{
-	margin-left: 20px;
-	width: 300px;
+	margin-left: 2%;
+	width: 96%;
+	height: 96%;
 }
 #header{
-	background: url(../img/fotocabez.png);
-	height: 100px;
-	margin-top: 10px;
+	background-color:#0AC986;
+	height: 80px;
 	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+	border:none;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+
 	-vebkit-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 	-moz-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 	-o-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
  	box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+#titulo
+{
+		color: #fff;
+		text-align: left;
 
+		position: absolute;
+		left: 40px;
+		top: 15px;
+}
+#mapid {
+  background: #000000;
+
+  position: absolute;
+
+  top: 100px;
+  left: 22%;
+  bottom: 10px;
+
+  width: 76%;
+  height: auto;
+
+	-vebkit-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+	-moz-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+	-o-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+ 	box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+
+body{background:url("http://www.galaxiastudio.com/wp-content/uploads/2014/03/2252.jpg")#999999}
+h1{
+  color:#AAA173;
+  text-align:center;
+}
+
+#login
+{
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  font-family:arial;
+
+	position: absolute;
+	top: 25px;
+	right: 4%;
+}
+.login-form{
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+}
+.form-control{
+  width:150px;
+  height:50px;
+  border:none;
+  padding:5px 7px 5px 15px;
+  background:#fff;
+  color:#666;
+  border:2px solid #FFFFFF;
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+}
+.log-btn{
+  background:#09B875;
+  width:100px;
+  font-size:16px;
+  height:50px;
+  color:#fff;
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+}
+
+#error
+{
+	color:#f00;
+	position: absolute;
+	top: 30px;
+}
+
+#sesion
+{
+	color:#00f;
+  font-size:20px;
+	position: absolute;
+	top: 40px;
+	right: 2%;
+}
+
+
+#ver_on1{
+	background-color: #000;
+	text-align: left;
 }
 
 #menu{
-	background-color: #55a;
-	text-align: left;
+	background:#0AC986;
+	dispaly:inline-block;
+	width:20%;
+	font-size:16px;
+	color:#fff;
+	text-decoration:none;
+	border:none;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	margin-top: 0px;
+
+	-vebkit-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+	-moz-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+	-o-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+ 	box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 }
 #menu ul{
 	margin:0;
@@ -36,12 +150,11 @@ body{
 #menu ul li{
 	list-style: none;
 	display: list-item;
-	padding: 20px 10px;
+	padding: 10px 10px;
 	margin-left: -25px
-
 	color: #000;
-	font-size: 14px;
-	font-weight: bold;
+	font-family:arial;
+	font-size: 16px;
 	padding: 20px 10px;
 	text-decoration: none;
 	cursor: pointer;
@@ -59,29 +172,88 @@ body{
 {
 	background-color: #000;
 	color:#fff;
-
   position: absolute
 	top: 50px;
-  width: 280px;
+  width: auto;
 	height: auto;
+	margin-left: 0px;
 }
 
-#content
-{
-	position: absolute;
-	margin-top: -100px;
-	margin-left: 310px;
 
-	background-color: #fff;
+#menuMapa{
+	background:#0AC986;
+	dispaly:inline-block;
+	width:20%;
+	font-size:16px;
+	color:#fff;
+	text-decoration:none;
+	border:none;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	margin-top: 10px;
+
 	-vebkit-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 	-moz-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 	-o-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
  	box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 }
+#menuMapa ul{
+	margin:0;
+	padding: 0;
+}
+
+#menuMapa ul li{
+	list-style: none;
+	display: list-item;
+	padding: 10px 10px;
+	margin-left: -25px
+	color: #000;
+	font-family:arial;
+	font-size: 16px;
+	padding: 20px 10px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#menuMapa ul li a{
+	color: #000;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 20px 10px;
+	text-decoration: none;
+}
+
+#menuMapa ul li:hover
+{
+	background-color: #000;
+	color:#fff;
+  position: absolute
+	top: 50px;
+  width: auto;
+	height: auto;
+	margin-left: 0px;
+}
+
+#infraccionesYa{
+
+	position: fixed;
+	top: 100px;
+  left: 330px;
+	position: fixed;
+
+}
+
+#contentInfraccionesYa{
+	position: fixed;
+  margin-left: 300px;
+	top: 30px;
+
+}
 
 #footer
 {
-	color: #fff;
+	color: #000;
 	font-size: 12px;
 	font-weight: bolder;
 	padding-top: 30px;

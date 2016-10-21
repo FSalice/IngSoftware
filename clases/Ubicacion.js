@@ -1,18 +1,15 @@
-var lat;
-var lng;
-var localidad;
-var calle;
-var altura;
-var cp;
-
-function Ubicacion(latitud, longitud, localidad, calle, altura, codigoPostal)
+function Ubicacion(latitud, longitud, localidad, calle, altura)
 {
   this.lat = latitud;
   this.lng = longitud;
   this.localidad = localidad;
   this.calle = calle;
   this.altura = altura;
-  this.cp = codigoPostal;
+
+  this.getInfo = function()
+  {
+    return this.calle + this.altura + "<br> " + this.localidad;
+  }
 
   this.getLatLng = function()
   {

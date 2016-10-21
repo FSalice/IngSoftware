@@ -1,32 +1,86 @@
 var map;
+var clusterVentas;
+var clusterLugares;
+var clusterLugaresOcupados;
+var poligonosZonas;
+var iniciado;
 
 function iniciarMapa()
 {
-  map = L.map('mapid').setView([-34.5221554, -58.7000067], 15);
+  if(!iniciado)
+  {
+    map = L.map('mapid').setView([-34.5221554, -58.7000067], 15);
 
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap'
-  }).addTo(map);
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap'
+    }).addTo(map);
+
+    clusterVentas = L.markerClusterGroup();
+    clusterVentas.addTo(map);
+    clusterLugares = L.markerClusterGroup();
+    clusterLugares.addTo(map);
+    clusterLugaresOcupados = L.markerClusterGroup();
+    clusterLugaresOcupados.addTo(map);
+
+    poligonosZonas = [L.polygon([])];
+
+    iniciado=true;
+  }
 }
 
-function test()
+
+function agregarPuntoDeVenta(punto)
 {
-  iniciarMapa();
+  punto.getMarker().addTo(clusterVentas);
+}
+
+function quitarPuntosVenta()
+{
+  clusterVentas.clearLayers();
+}
+
+function agregarLugar(punto)
+{
+  punto.getMarker().addTo(clusterLugares);
+}
+
+function quitarLugaresDisponibles()
+{
+  clusterLugares.clearLayers();
+}
+
+function agregarLugarOcupado(punto)
+{
+  punto.getMarker().addTo(clusterLugaresOcupados);
+}
+
+function quitarLugaresOcupados()
+{
+  clusterLugaresOcupados.clearLayers();
+}
+
+function agregarPoligonoZona(zona)
+{
+  var pol = zona.getPolygon();
+  poligonosZonas.push(pol);
+  pol.addTo(map);
+}
+
+function quitarPoligonos()
+{
+  for(var i = 0; i < poligonosZonas.length; i++)
+  {
+    map.removeLayer(poligonosZonas[i]);
+  }
+  poligonosZonas = [L.polygon([])];
 }
 
 function bootstrap()
 {
   iniciarMapa();
-  
+
   var ungsLocation = [-34.5221554, -58.7000067];
 
-  L.polygon([L.latLng(-34.515594, -58.705654),
-  L.latLng(-34.523503, -58.714062),
-  L.latLng(-34.519177, -58.719890),
-  L.latLng(-34.511089, -58.711374),
-  L.latLng(-34.514062, -58.707909),
-  L.latLng(-34.513824, -58.707584)
-  ]).addTo(map);
 
 
   var ungsIcon = L.icon({
