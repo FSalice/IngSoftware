@@ -1,6 +1,6 @@
 var ocupadoIcon = L.icon({
-    iconUrl: '../js/resources/ocupado.png',
-    shadowUrl: '../js/resources/sombra.png',
+    iconUrl: 'js/resources/ocupado.png',
+    shadowUrl: 'js/resources/sombra.png',
 
     iconSize:     [40, 40], // size of the icon
     shadowSize:   [40, 40], // size of the shadow
@@ -9,8 +9,8 @@ var ocupadoIcon = L.icon({
     popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
 });
 var disponibleIcon = L.icon({
-    iconUrl: '../js/resources/disponible.png',
-    shadowUrl: '../js/resources/sombra.png',
+    iconUrl: 'js/resources/disponible.png',
+    shadowUrl: 'js/resources/sombra.png',
 
     iconSize:     [40, 40], // size of the icon
     shadowSize:   [40, 40], // size of the shadow

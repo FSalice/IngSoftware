@@ -88,7 +88,7 @@ function logged()
   if(usuario!="error")
   {
     mostrar("sesion");
-    document.getElementById("sesion").innerHTML = "Bienvenido/a " + usuario[0] + "! <a href='/'>Cerrar Sesion</a>"
+    document.getElementById("sesion").innerHTML = "Bienvenido/a " + usuario[0] + "! <a href='./index.html'>Cerrar Sesion</a>"
     ocultar("login");
     ocultar("error");
     if(usuario[1]=="Inspector")

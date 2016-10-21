@@ -1,6 +1,6 @@
 var ventasIcon = L.icon({
-    iconUrl: '../js/resources/ventas.png',
-    shadowUrl: '../js/resources/sombra.png',
+    iconUrl: 'js/resources/ventas.png',
+    shadowUrl: 'js/resources/sombra.png',
 
     iconSize:     [40, 40], // size of the icon
     shadowSize:   [40, 40], // size of the shadow
